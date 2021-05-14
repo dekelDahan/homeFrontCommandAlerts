@@ -25,7 +25,7 @@ const checkAlerts = () => {
             lastAlarm = response.data
         }
         console.log('No Alerts')
-    }).catch((reason) => console.log(reason))
+    }).catch((reason) => console.log('Error'))
 }
 
 app.get('/',(req,res) => {
