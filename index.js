@@ -30,7 +30,7 @@ app.get('/',(req,res) => {
     res.json(lastAlarm)
 })
 
-app.listen(() => {
+app.listen(process.env.PORT || 3000,() => {
     console.log('Start web server')
 })
 
