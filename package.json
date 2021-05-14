@@ -5,13 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "pm2 start index.js -i 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
     "discord.js": "^12.5.3",
-    "express": "^4.17.1"
+    "pm2": "^4.5.6"
   }
 }

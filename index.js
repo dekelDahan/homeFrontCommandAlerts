@@ -1,8 +1,6 @@
 const discord = require('discord.js');
 const axios = require('axios');
 const config = require('./config.json');
-const express =  require('express')
-const app = express()
 
 
 const webhookClient = new discord.WebhookClient(config.webhookId,config.webhookToken);
@@ -28,11 +26,4 @@ const checkAlerts = () => {
     }).catch((reason) => console.log('Error'))
 }
 
-app.get('/',(req,res) => {
-    res.json(lastAlarm)
-})
-
-app.listen(process.env.PORT || 3000,() => {
-    console.log('Start web server')
-    setInterval(checkAlerts,2000)
-})
+setInterval(checkAlerts,2000)
