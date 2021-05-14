@@ -9,7 +9,7 @@ var lastAlarm = undefined
 
 const checkAlerts = () => {
     axios.default.get(config.homeFrontCommandApi,{headers: {'X-Requested-With': 'XMLHttpRequest',Referer: config.referer}}).then((response) => {
-        if(response.data && !lastAlarm || response.data.id !== lastAlarm.id){
+        if(response.data && (!lastAlarm || response.data.id !== lastAlarm.id)){
             const embed = new discord.MessageEmbed()
             .setColor('#ff0000')
             .setTitle('Missile Attack Alert')
