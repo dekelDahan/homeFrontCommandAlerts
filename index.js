@@ -21,8 +21,10 @@ const checkAlerts = () => {
             .setFooter(response.data.id)
             .setTimestamp()
             webhookClient.send(embed)
+            console.log(response.data)
             lastAlarm = response.data
         }
+        console.log('No Alerts')
     }).catch((reason) => undefined)
 }
 
@@ -32,6 +34,5 @@ app.get('/',(req,res) => {
 
 app.listen(process.env.PORT || 3000,() => {
     console.log('Start web server')
+    setInterval(checkAlerts,2000)
 })
-
-setInterval(checkAlerts,2000)
