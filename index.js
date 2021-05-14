@@ -14,7 +14,7 @@ const checkAlerts = () => {
             .setColor('#ff0000')
             .setTitle('Missile Attack Alert')
             .setAuthor('IDF Spokesperson Officer 🗣',config.authorIcon)
-            .setThumbnail('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/IDF_Home_Front_Command_Colored_Tag.svg/230px-IDF_Home_Front_Command_Colored_Tag.svg.png')
+            .setThumbnail(config.thumbnailIcon)
             .addField('Where',response.data.data.join(','))
             .setFooter(response.data.id)
             .setTimestamp()
