@@ -10,7 +10,7 @@ const webhookClient = new discord.WebhookClient(config.webhookId,config.webhookT
 var lastAlarm = undefined
 
 const checkAlerts = () => {
-    axios.default.get(config.homeFrontCommandApi,{proxy: {host:'84.95.199.206',port: '8888'},headers: {'X-Requested-With': 'XMLHttpRequest',Referer: config.referer}}).then((response) => {
+    axios.default.get(config.homeFrontCommandApi,{headers: {'X-Requested-With': 'XMLHttpRequest',Referer: config.referer}}).then((response) => {
         if(response.data && response.data.id !== lastAlarm.id){
             const embed = new discord.MessageEmbed()
             .setColor('#ff0000')
