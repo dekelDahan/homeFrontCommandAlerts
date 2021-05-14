@@ -23,7 +23,7 @@ const checkAlerts = () => {
             lastAlarm = response.data
         }
         console.log('No Alerts')
-    }).catch((reason) => console.log('Error'))
+    }).catch((reason) => console.log(reason))
 }
 
 setInterval(checkAlerts,2000)
